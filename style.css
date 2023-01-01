@@ -25,10 +25,10 @@ body{
     align-content: center;
     align-items: center;
     padding: 3rem;
-    height: 100vh;
+    min-height: 100vh;
 }
 
-.main-div{
+main{
     background-color: var(--white);
     max-width: calc(375px - 5.5rem);
     display: flex;
@@ -68,16 +68,16 @@ img{
     margin-bottom: 2rem;
 }
 
-.attribution{
+footer{
     font-size: 11px; 
     text-align: center;
 }
 
-.attribution a{
+footer a{
     color: hsl(228, 45%, 44%);
     text-decoration: none;
 }
 
-.attribution a:hover{
+footer a:hover{
     color:hsl(228, 79%, 55%)
 }
