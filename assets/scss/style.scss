@@ -1,0 +1,88 @@
+// Variables
+
+// Colors
+$dark_blue: hsl(218, 44%, 22%);
+$grayish_blue: hsl(220, 15%, 55%);
+$light_gray: hsl(212, 45%, 89%);
+$white: hsl(0, 0%, 100%);
+
+// MIXINS
+
+@mixin flex ($direction, $just, $align, $gap){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $just;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin font ($color,$size,$weight){
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+// RESETS
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  cursor: pointer;
+  text-decoration: none;
+}
+
+body{
+  min-height: 100vh;
+}
+
+img{
+  display: block;
+  width: 100%;
+}
+
+// STYLES
+
+body{
+  @include flex(column, center, center, 1em);
+  background-color: $light_gray;
+  font-family: 'Outfit', sans-serif;
+}
+
+.main{
+  @include flex(column,space-around, center, 1.5em);
+  background-color: $white;
+  border-radius: 20px;
+  padding: 1em;
+  max-width: 20em;
+
+  &__img{
+    border-radius: 10px;
+  }
+
+  &__h1{
+    @include font($dark_blue, 1.375em, 700);
+    text-align: center;
+  }
+
+  &__p{
+    @include font($grayish_blue, 1em, 500);
+    margin-bottom: 1em;
+    text-align: center;
+  }
+}
+
+.footer{
+  @include flex(column, center, center,0.25em);
+
+  &__span{
+    @include font($grayish_blue, 1em, 500)
+  }
+
+  &__a{
+    @include font($dark_blue, 1em, 500);
+  }
+}
